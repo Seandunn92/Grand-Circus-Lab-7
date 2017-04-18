@@ -26,8 +26,10 @@ public class Lab7Driver {
             System.out.println("Please enter the student number you want to check on(1-" +firstNames.length +")");
             try {
                 userInput = scan.nextInt();
-                System.out.println("What would you like to know about " +firstNames[userInput-1] + lastNames[userInput-1] +
+                scan.nextLine();
+                System.out.println("What would you like to know about " +firstNames[userInput-1] +" " +lastNames[userInput-1] +
                 "(h:hometown, f: favorite food:)");
+
 
                 userChar = scan.nextLine().toLowerCase().charAt(0);
                 while( userChar!='h' && userChar!= 'f' ){
@@ -36,10 +38,10 @@ public class Lab7Driver {
                 }
 
                 if(userChar == 'h'){
-                    System.out.println(firstNames[userInput +1] + "is from " + hometown[userInput+1]);
+                    System.out.println(firstNames[userInput -1] + "is from " + hometown[userInput-1]);
                 }
                 else {
-                    System.out.println(firstNames[userInput +1] + "'s favorite food is  " + favFood[userInput+1]);
+                    System.out.println(firstNames[userInput -1] + "'s favorite food is  " + favFood[userInput-1]);
                 }
 
 
@@ -55,7 +57,7 @@ public class Lab7Driver {
                 catch(IndexOutOfBoundsException e){
                 System.out.println("Student Index was out of bounds");
                 }
-            scan.nextLine();
+
 
 
 
